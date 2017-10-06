@@ -20,15 +20,15 @@
         {{user}}
       </ion-col>
     </ion-row>
-    <p class="categories_title">Categories:</p>
+    <p class="bold-title">Categories:</p>
     <ion-grid>
       <ion-row>
-        <ion-col *ngFor="let category of categories">
-          <ion-badge class="badage-item" (click)="getCategoryPosts(category.id, category.name)">{{category.name}}</ion-badge>
+        <ion-col class="category-col" *ngFor="let category of categories">
+          <ion-badge (click)="getCategoryPosts(category.id, category.name)">{{category.name}}</ion-badge>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <p class="categories_title">Comments:</p>
+    <p class="bold-title">Comments:</p>
     <ion-item *ngFor="let comment of comments">
       <ion-avatar item-start>
         <img src="{{comment.author_avatar_urls[24]}}">

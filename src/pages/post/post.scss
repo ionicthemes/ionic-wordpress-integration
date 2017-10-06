@@ -19,21 +19,19 @@ page-post {
     line-height: 1.4;
   }
 
-  .categories_title{
+  .bold-title{
     font-weight: bold;
     font-size: inherit;
     color: #000;
   }
 
-  .category_item{
-    color: #4a8bfc;
+  .category-col {
+    flex-grow: 0;
+    width: auto;
+    flex-basis: auto;
   }
 
   .post img{
     height: 100%;
-  }
-
-  .badage-item{
-    margin-left: 10px
   }
 }
