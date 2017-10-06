@@ -1,0 +1,17 @@
+<ion-content padding class="form-content">
+  <form class="form" [formGroup]="login_form" (ngSubmit)="login(login_form.value)">
+    <ion-label class="title">Welcome back</ion-label>
+    <p class="skip-login"><a (click)="skipLogin()">Click here to skip login!</a></p>
+    <ion-item>
+      <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+    <p class="error-message" *ngIf="error_message">{{error_message}}</p>
+    <button ion-button full class="login-button" [disabled]="!login_form.valid" type="submit">Login</button>
+  </form>
+</ion-content>

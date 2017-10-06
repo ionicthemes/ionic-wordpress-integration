@@ -1,0 +1,39 @@
+page-post {
+  .post {
+    padding: 6px;
+  }
+
+  .post-title{
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: #222;
+    margin: 2px 0;
+    padding: 8px 0;
+  }
+
+  .post-content{
+    margin: 0 0 2px;
+    font-size: 1.4rem;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  .categories_title{
+    font-weight: bold;
+    font-size: inherit;
+    color: #000;
+  }
+
+  .category_item{
+    color: #4a8bfc;
+  }
+
+  .post img{
+    height: 100%;
+  }
+
+  .badage-item{
+    margin-left: 10px
+  }
+}

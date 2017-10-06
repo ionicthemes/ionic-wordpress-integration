@@ -1,0 +1,39 @@
+page-login {
+  .form-content{
+    background-color: #4682B4
+  }
+
+  .title{
+    text-align: center;
+    color: #FFF;
+    margin: 100px 0px 50px;
+    font-size: 30px;
+  }
+
+  .skip-login{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #FFF;
+    a{
+      color: #FFF;
+    }
+  }
+
+  .form{
+    margin-top: 50px
+  }
+
+  .login-button{
+    margin-top: 30px;
+    font-weight: 500;
+  }
+
+  .error-message{
+    color: #FFF;
+    padding: 2px;
+    font-weight: 500;
+    text-align: center;
+  }
+}

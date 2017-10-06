@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title *ngIf="!categoryTitle">Recent posts</ion-title>
+    <ion-title *ngIf="categoryTitle">{{categoryTitle}} posts</ion-title>
+    <ion-buttons *ngIf="loggedUser" end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons *ngIf="!loggedUser" end>
+      <button ion-button icon-only (click)="logIn()">
+        <ion-icon class="toolbar-icon" name="log-in"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-card *ngFor="let post of posts" >
+    <ion-card-content >
+      <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
+      <p [innerHTML]="post.excerpt.rendered"></p>
+    </ion-card-content>
+    <ion-row no-padding>
+       <ion-col>
+         <button ion-button clear small color="primary" icon-start>
+           {{post.date.split('T')[0]}}
+         </button>
+       </ion-col>
+       <!-- <ion-col text-center>
+         <button ion-button clear small color="primary" icon-start>
+          <ion-icon name='chatbubbles'></ion-icon>
+           Comments
+         </button>
+       </ion-col> -->
+       <ion-col text-right>
+         <button ion-button small color="primary" (click)="postTapped($event, post)" icon-start>
+            Read More
+         </button>
+       </ion-col>
+     </ion-row>
+  </ion-card>
+  <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more posts ...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
