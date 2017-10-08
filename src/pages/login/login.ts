@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { Http, Headers } from '@angular/http';
 import { HomePage } from '../home/home'
-import { RegisterPage } from '../register/register'
-import 'rxjs/add/operator/map';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { NativeStorage } from '@ionic-native/native-storage';
-import * as Config from '../../config';
+import { WordpressService } from '../../services/wordpress.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'page-login',
@@ -19,10 +16,10 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
-    public http: Http,
     public formBuilder: FormBuilder,
-    public nativeStorage: NativeStorage) {
-  }
+    public wordpressService: WordpressService,
+    public authenticationService: AuthenticationService
+  ) {}
 
   ionViewWillLoad() {
     this.login_form = this.formBuilder.group({
@@ -37,18 +34,15 @@ export class LoginPage {
     let loading = this.loadingCtrl.create();
     loading.present();
 
-    this.http.post(Config.WORDPRESS_URL + 'wp-json/jwt-auth/v1/token',{
-      username: value.username,
-      password: value.password
-    })
-    .subscribe( res => {
-       console.log(res.json())
-       this.nativeStorage.setItem('User',{
+    this.authenticationService.doLogin(value.username, value.password)
+    .subscribe(res => {
+       this.authenticationService.setUser({
          token: res.json().token,
          username: value.username,
          displayname: res.json().user_display_name,
          email: res.json().user_email
-       })
+       });
+
        loading.dismiss();
        this.navCtrl.setRoot(HomePage);
      },

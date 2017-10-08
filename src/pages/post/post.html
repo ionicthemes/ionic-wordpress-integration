@@ -24,7 +24,7 @@
     <ion-grid>
       <ion-row>
         <ion-col class="category-col" *ngFor="let category of categories">
-          <ion-badge (click)="getCategoryPosts(category.id, category.name)">{{category.name}}</ion-badge>
+          <ion-badge (click)="goToCategoryPosts(category.id, category.name)">{{category.name}}</ion-badge>
         </ion-col>
       </ion-row>
     </ion-grid>
