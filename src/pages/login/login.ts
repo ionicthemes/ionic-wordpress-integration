@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HomePage } from '../home/home'
+import { RegisterPage } from '../register/register'
 import { NavController, LoadingController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { WordpressService } from '../../services/wordpress.service';
@@ -55,6 +56,10 @@ export class LoginPage {
 
   skipLogin(){
     this.navCtrl.setRoot(HomePage);
+  }
+
+  goToRegister(){
+    this.navCtrl.push(RegisterPage);
   }
 
 }

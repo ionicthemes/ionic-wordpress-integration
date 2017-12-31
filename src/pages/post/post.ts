@@ -49,7 +49,7 @@ export class PostPage {
         this.comments = data[2];
         loading.dismiss();
       });
-    }
+  }
 
   getAuthorData(){
     return this.wordpressService.getAuthor(this.post.author);

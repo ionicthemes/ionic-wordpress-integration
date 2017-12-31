@@ -70,6 +70,7 @@ export class HomePage {
         if(!loading){
           infiniteScroll.complete();
         }
+        post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
         this.posts.push(post);
         loading = false;
       }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
-import { PostPage } from '../post/post'
-import 'rxjs/add/operator/map';
+import { PostPage } from '../post/post';
 import { NavController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import * as Config from '../../config';
+import { WordpressService } from '../../services/wordpress.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'page-register',
@@ -16,8 +16,9 @@ export class RegisterPage {
   constructor(
     public navCtrl: NavController,
     public formBuilder: FormBuilder,
-    public http: Http) {
-  }
+    public wordpressService: WordpressService,
+    public authenticationService: AuthenticationService
+  ) {}
 
   ionViewWillLoad() {
     this.register_form = this.formBuilder.group({
@@ -29,18 +30,19 @@ export class RegisterPage {
   }
 
   onSubmit(values){
-    this.http.post(Config.WORDPRESS_URL + 'wp-json/jwt-auth/v1/token',{
-      username: 'aa',
-      password: 'aa'
-    })
+    var username: 'aa'; // this should be an administrator Username
+    var password: 'aa'; // this should be an administrator Password
+    //only authenticated administrators can create users
+    this.authenticationService.doLogin(username, password)
     .subscribe(
       res => {
-        this.http.post(Config.WORDPRESS_REST_API_URL + 'users?token=' + res.json().token,{
+        let user_data = {
           username: values.username,
           name: values.displayName,
           email: values.email,
           password: values.password
-        })
+        };
+        this.authenticationService.doRegister(user_data, res.json().token)
         .subscribe(
           result => {
             console.log(result);
@@ -48,7 +50,7 @@ export class RegisterPage {
           error => {
             console.log(error);
           }
-        )
+        );
       },
       err => {
         console.log(err);
