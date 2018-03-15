@@ -38,6 +38,7 @@ export class PostPage {
     loading.present();
 
     this.post = this.navParams.get('item');
+    this.stripShareFromHtml();
 
     Observable.forkJoin(
       this.getAuthorData(),
@@ -49,6 +50,10 @@ export class PostPage {
         this.comments = data[2];
         loading.dismiss();
       });
+  }
+
+  stripShareFromHtml(){
+    this.post.content.rendered = this.post.content.rendered.split('<div class="sharedaddy')[0];
   }
 
   getAuthorData(){
