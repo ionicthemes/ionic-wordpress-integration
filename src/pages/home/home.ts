@@ -49,9 +49,17 @@ export class HomePage {
           post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
           this.posts.push(post);
         }
+        this.goToPost();        
         loading.dismiss();
       });
-    }
+    }   
+  }
+
+  goToPost(){
+    let event = new MouseEvent('click', {bubbles: true});
+    setTimeout(() => {
+      this.postTapped(event, this.posts[0]);
+    }, 400);
   }
 
   postTapped(event, post) {
