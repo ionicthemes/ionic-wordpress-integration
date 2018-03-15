@@ -9,6 +9,8 @@
 <ion-content padding>
   <div *ngIf="post" class="post">
     <div class="post-title" [innerHTML]="post.title.rendered"></div>
+  
+    <!-- <p>{{post.content.rendered}}</p> -->
     <p class="post-content" [innerHTML]="post.content.rendered"></p>
     <ion-row>
       <ion-col>

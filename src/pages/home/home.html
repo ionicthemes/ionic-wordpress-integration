@@ -16,10 +16,11 @@
 </ion-header>
 
 <ion-content class="content">
+
   <ion-card *ngFor="let post of posts" >
     <ion-card-content >
       <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
-      <p [innerHTML]="post.excerpt.rendered"></p>
+      <!-- <p [innerHTML]="post.excerpt.rendered"></p> -->
     </ion-card-content>
     <ion-row no-padding>
        <ion-col>
