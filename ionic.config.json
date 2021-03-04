@@ -1,8 +1,7 @@
 {
-  "name": "ionic-wordpress-example",
-  "app_id": "",
-  "type": "ionic-angular",
+  "name": "ionic-wordpress-tutorial",
   "integrations": {
-    "cordova": {}
-  }
+    "capacitor": {}
+  },
+  "type": "angular"
 }

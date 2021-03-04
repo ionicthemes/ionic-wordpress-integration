@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="page-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-content">
+  <ion-text color="primary">
+    <h1>Create an account</h1>
+  </ion-text>
+
+  <form class="signup-form" [formGroup]="registerForm" (submit)="onSubmit()">
+    <ion-item class="input-item">
+      <ion-label color="secondary" position="stacked">Username</ion-label>
+      <ion-input type="text" formControlName="username" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label color="secondary" position="stacked">Display Name</ion-label>
+      <ion-input type="text" formControlName="displayName" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label color="secondary" position="stacked">Email</ion-label>
+      <ion-input type="email" formControlName="email" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label color="secondary" position="stacked">Password</ion-label>
+      <ion-input type="password" formControlName="password" clearInput="true"></ion-input>
+    </ion-item>
+
+    <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+    <p class="success-message" *ngIf="successMessage">{{successMessage}}</p>
+
+    <p class="log-in">
+      <a (click)="goToLogIn()">Already have an account?</a>
+    </p>
+
+    <ion-button class="submit-btn" expand="block" [disabled]="!registerForm.valid" type="submit" strong="true">Sign up</ion-button>
+  </form>
+</ion-content>

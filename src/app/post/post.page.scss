@@ -1,0 +1,27 @@
+.page-content {
+  --padding-top: 20px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+
+  .post-body {
+    font-size: 16px;
+    color: var(--ion-color-primary-tint);
+    line-height: 1.5;
+  }
+
+  .post-category {
+    margin-inline-end: 6px;
+  }
+
+  .post-comments {
+    margin-top: 16px;
+  }
+}
+
+::ng-deep {
+  .post-body {
+    img {
+      height: 100%;
+    }
+  }
+}

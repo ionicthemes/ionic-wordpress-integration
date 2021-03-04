@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="!categoryTitle">Recent posts</ion-title>
+    <ion-title *ngIf="categoryTitle">{{categoryTitle}} posts</ion-title>
+    <ion-buttons slot="start" *ngIf="categoryTitle">
+      <ion-back-button defaultHref="posts"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="(loggedInObservable | async) === false" [routerLink]="['/login']">Log In
+      </ion-button>
+      <ion-button *ngIf="(loggedInObservable | async) === true" (click)="logOut()">Log out
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-content">
+  <ion-card *ngFor="let post of posts" [routerLink]="['/post', post.id]" class="post-card">
+    <ion-card-header>
+      <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p [innerHTML]="post.excerpt.rendered"></p>
+    </ion-card-content>
+    <ion-item class="ion-activated" detail lines="none" color="secondary">
+      <ion-label *ngIf="!post.modified">{{post.date | date}}</ion-label><ion-label *ngIf="post.modified">{{post.modified | date}}</ion-label>
+      <ion-label class="read-more-label">Read More</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more posts ...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

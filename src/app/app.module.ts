@@ -1,49 +1,29 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { RouteReuseStrategy } from '@angular/router';
 
-import { PostPage } from '../pages/post/post';
-import { HomePage } from '../pages/home/home';
-import { RegisterPage } from '../pages/register/register';
-import { LoginPage } from '../pages/login/login';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { WordpressService } from '../services/wordpress.service';
-import { AuthenticationService } from '../services/authentication.service';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { NativeStorage } from '@ionic-native/native-storage';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    PostPage,
-    HomePage,
-    LoginPage,
-    RegisterPage
-  ],
+  declarations: [AppComponent],
+  entryComponents: [],
   imports: [
     BrowserModule,
-    HttpModule,
-    IonicModule.forRoot(MyApp)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    PostPage,
-    HomePage,
-    LoginPage,
-    RegisterPage
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    NativeStorage,
-    WordpressService,
-    AuthenticationService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

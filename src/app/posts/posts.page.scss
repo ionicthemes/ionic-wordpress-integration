@@ -1,0 +1,11 @@
+.page-content {
+  --background: var(--ion-color-light);
+
+  .post-card {
+    outline: none;
+
+    .read-more-label {
+      text-align: right;
+    }
+  }
+}
