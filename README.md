@@ -1,19 +1,22 @@
+## Ionic Wordpress Starter App
+
 Let's build an Ionic app for your Wordpress site using Wordpress REST API! This ionic tutorial will show you how to communicate with the WP API in order to get your Wordpress posts, categories, comments. We also added Wordpress Login using JWT .This ionic tutorial includes a working example you can reuse for your needs!
 
-This app is built using Ionic 5 and Angular 11.
-
+**This app is built using Ionic 5 and Angular 11.**
 *The old version used Ionic 3, if you are still working with Ionic 3, check the Ionic-v3 folder.*
 
 **Please support this project by simply putting a Github star ⭐. Share this library with friends on Twitter and everywhere else you can. 🙏**
 
 [Check the complete step by step tutorial](https://ionicthemes.com/tutorials/about/ionic-wordpress-integration).
 
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-login.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-signup.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-posts-listing.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-post-details.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-add-comment.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-post-with-images.png)
+<div>
+  <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-login.png" width="270">
+  <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-signup.png" width="270">
+  <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-posts-listing.png" width="270">
+  <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-post-details.png" width="270">
+  <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-add-comment.png" width="270">
+  <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-post-with-images.png" width="270">
+</div>
 
 ## Installation
 
