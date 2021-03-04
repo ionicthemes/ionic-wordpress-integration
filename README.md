@@ -3,11 +3,14 @@
 Let's build an Ionic app for your Wordpress site using Wordpress REST API! This ionic tutorial will show you how to communicate with the WP API in order to get your Wordpress posts, categories, comments. We also added Wordpress Login using JWT .This ionic tutorial includes a working example you can reuse for your needs!
 
 **This app is built using Ionic 5 and Angular 11.**
+
 *The old version used Ionic 3, if you are still working with Ionic 3, check the Ionic-v3 folder.*
 
 **Please support this project by simply putting a Github star ⭐.**
 
-[Check the complete step by step tutorial](https://ionicthemes.com/tutorials/about/ionic-wordpress-integration).
+🤓 [Check the complete step by step tutorial](https://ionicthemes.com/tutorials/about/ionic-wordpress-integration).
+
+🚀 [Try the demo](https://ionic-wordpress-tutorial.web.app/).
 
 <div>
   <img src="https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/ionic-wordpress-integration/ionic-wordpress-login.png" width="270">
