@@ -5,7 +5,7 @@ Let's build an Ionic app for your Wordpress site using Wordpress REST API! This 
 **This app is built using Ionic 5 and Angular 11.**
 *The old version used Ionic 3, if you are still working with Ionic 3, check the Ionic-v3 folder.*
 
-**Please support this project by simply putting a Github star ⭐. Share this library with friends on Twitter and everywhere else you can. 🙏**
+**Please support this project by simply putting a Github star ⭐.**
 
 [Check the complete step by step tutorial](https://ionicthemes.com/tutorials/about/ionic-wordpress-integration).
 
